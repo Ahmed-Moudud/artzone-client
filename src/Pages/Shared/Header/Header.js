@@ -1,17 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.png'
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import './Header.css'
 
 const Header = () => {
+    const {user, logOut} = useContext(AuthContext);
 
-
-
+    const handleLogOut = () => {
+        logOut()
+        .then()
+        .catch()
+    }
 
     const menuItems = <>
     <li className='font-semibold'><Link to='/'>Home</Link></li>
-    <li className='font-semibold'><Link to='/'>My Services</Link></li>
-    <li className='font-semibold'><Link to='/'>Add Services</Link></li>
+
+    {
+        user ?.email ?
+        <>
+          <li className='font-semibold'><Link to='/'>My Services</Link></li>
+          <li className='font-semibold'><Link to='/'>Add Services</Link></li>
+          <li><Link className='font-semibold' onClick={handleLogOut}>Logout</Link></li>
+          </>
+          :
+          <li className='font-semibold'><Link to='/login'>Login</Link></li>
+    }
     </>
 
     return (
@@ -25,7 +39,7 @@ const Header = () => {
               {menuItems}
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost normal-case text-xl">
+          <Link to="/" className="normal-case text-xl">
               <img className=' brand-logo' src={logo} alt="" />
           </Link>
         </div>
@@ -35,11 +49,7 @@ const Header = () => {
             {menuItems}
           </ul>
         </div>
-        <div className="navbar-end">
-        <Link to='/signup' className="btn btn-ghost normal-case text-xl hidden lg:block">Sign Up</Link>
-        <Link to='/login' className="btn btn-ghost normal-case text-xl hidden lg:block">Log In</Link>
-        <Link to='/' className="btn btn-ghost normal-case text-xl hidden lg:block">Sign Out</Link>
-        </div>
+     
       </div>
     );
 };
