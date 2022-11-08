@@ -10,6 +10,8 @@ const Header = () => {
 
     const menuItems = <>
     <li className='font-semibold'><Link to='/'>Home</Link></li>
+    <li className='font-semibold'><Link to='/'>My Services</Link></li>
+    <li className='font-semibold'><Link to='/'>Add Services</Link></li>
     </>
 
     return (
@@ -34,7 +36,9 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
-        <button className="btn btn-outline btn-warning">Appoinment</button>
+        <Link to='/signup' className="btn btn-ghost normal-case text-xl hidden lg:block">Sign Up</Link>
+        <Link to='/login' className="btn btn-ghost normal-case text-xl hidden lg:block">Log In</Link>
+        <Link to='/' className="btn btn-ghost normal-case text-xl hidden lg:block">Sign Out</Link>
         </div>
       </div>
     );
