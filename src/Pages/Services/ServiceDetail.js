@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import AddReview from '../Review/AddReview';
 
 const ServiceDetail = () => {
     const { _id, title, price, img, description } = useLoaderData();
@@ -17,7 +18,11 @@ const ServiceDetail = () => {
             </div>
 
             <div>
-                <h2>Review section</h2>
+                <AddReview
+                key={_id}
+                title = {title}
+                id = {_id}
+                ></AddReview>
             </div>
         </div>
     );
