@@ -68,3 +68,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### live site link: https://assignment-eleven-client.web.app/
+
+### About Projects
+1. It is a react based website
+2. React router dom is used in this projects
+3. It's authentication system is connected to firebase
+4. Any registered user can post a review for any service
+5. Any registerder user can add service to this site
+6. There are some private routes only registered user can have access of those routes
+
