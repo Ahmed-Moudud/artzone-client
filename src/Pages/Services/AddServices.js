@@ -3,7 +3,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const AddServices = () => {
     const {user} = useContext(AuthContext);
-
+    
 
     const handleAddService = event => {
         event.preventDefault();
@@ -31,12 +31,13 @@ const AddServices = () => {
         .then(data => {
             console.log(data)
             if(data.acknowledged){
-                alert('service added');
+                alert('service added');               
                 form.reset();
             }
         })
         .catch(err => console.error(err));
     }
+    
 
 
 
