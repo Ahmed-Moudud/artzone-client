@@ -10,6 +10,7 @@ const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    
 
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
@@ -33,6 +34,7 @@ const AuthProvider = ({children}) => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             console.log(currentUser);
             setUser(currentUser);
+            setLoading(false)
         });
         return() => {
             return unsubscribe();
@@ -47,6 +49,11 @@ const AuthProvider = ({children}) => {
             googleSignIn,
             logOut
     };
+    if(loading){
+        return <div>
+            <button className="btn btn-square loading text-blue-600 w-1/6 mx-auto flex justify-center"></button>
+        </div>
+    }
 
     return (
         <AuthContext.Provider value={authInfo}>

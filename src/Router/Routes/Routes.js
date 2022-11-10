@@ -4,6 +4,7 @@ import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import AddReview from "../../Pages/Review/AddReview";
 import Reviews from "../../Pages/Review/Reviews";
+import AddServices from "../../Pages/Services/AddServices";
 import AllServices from "../../Pages/Services/AllServices";
 import ServiceDetail from "../../Pages/Services/ServiceDetail";
 import SignUp from "../../Pages/SignUp/SignUp";
@@ -46,9 +47,14 @@ const router = createBrowserRouter([
                 element: <Reviews></Reviews>
             },
             {
-                path: '/addreview',
-                element: <PrivateRoute><AddReview></AddReview></PrivateRoute>
+                path: '/addreviews',
+                element: <AddReview></AddReview>
+            },
+            {
+                path: '/addservices',
+                element: <PrivateRoute><AddServices></AddServices></PrivateRoute>
             }
+           
         ]
     }
 ])
