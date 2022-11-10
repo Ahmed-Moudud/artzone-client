@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import AddReview from '../Review/AddReview';
+import Reviews from '../Review/Reviews';
 
 const ServiceDetail = () => {
     const { _id, title, price, img, description } = useLoaderData();
@@ -16,10 +17,15 @@ const ServiceDetail = () => {
                 <figure><img className='w-full h-2/5' src={img} alt="" /></figure>
                 <p>{description}</p>
             </div>
+            <div>
+                <Reviews
+                title= {title}
+                ></Reviews>
+            </div>
 
             <div>
                 <AddReview
-                key={_id}
+                
                 title = {title}
                 id = {_id}
                 ></AddReview>

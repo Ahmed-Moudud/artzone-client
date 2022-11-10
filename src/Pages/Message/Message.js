@@ -8,7 +8,7 @@ const Message = () => {
           <img src={artist} alt='' />
           <div>
             <h1 className="text-5xl font-bold">Message From Artist</h1>
-            <p className="py-6 text-white">Do you love art or painting? Yes it definitely cant buy you any tangible assets but surely it will give you joy and happiness? To those the main objective of every human beign. It you like our work please feel free to contact with us. We are always here for you to serce the best service.</p>
+            <p className="py-6 text-white">Do you love art or painting? Yes, it definitely cant buy you any tangible asset but surely it will bring you joy and happiness. And those are the main objectives of every human being. If you like our work please feel free to contact with us. We are always here for you to serve the best service.</p>
            
           </div>
         </div>
