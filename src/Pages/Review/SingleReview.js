@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SingleReview = ({review, title}) => {
-    const {_id, email, message, name, serviceName} = review;
+    const {message, name, serviceName} = review;
    
     return (
       <div className='grid grid-cols-3'>
